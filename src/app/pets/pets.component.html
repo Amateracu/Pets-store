@@ -1,3 +1,8 @@
-<div class="btn" *ngFor="let pet of pets">{{pet}}
-</div>
+<app-pet
+  *ngFor="let pet of pets"
+  [petInfo]="pet"
+>
+</app-pet>
+
+
 

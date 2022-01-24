@@ -5,17 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PetsComponent } from './pets/pets.component';
 import { PetService } from './services/pet.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { PetComponent } from './pet/pet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PetsComponent
+    PetsComponent,
+    PetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClient,
+    HttpClientModule,
   ],
   providers: [PetService],
   bootstrap: [AppComponent]
