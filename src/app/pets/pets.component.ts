@@ -35,5 +35,9 @@ export class PetsComponent implements OnInit{
     });
   }
 
+  public addPhoto(newPhoto: string) {
+
+  }
+
 
 }

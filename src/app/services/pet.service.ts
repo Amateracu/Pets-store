@@ -22,7 +22,7 @@ export class PetService {
       },
       photoUrls: [],
       tags: [],
-      status: ''
+      status: 'Доступно'
     }
     return this.http.post<IPet>('https://petstore.swagger.io/v2/pet', data)
   }

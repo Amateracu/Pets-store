@@ -1,2 +1,17 @@
-<input type="text" [(ngModel)]="newPet" >
+<form [formGroup] = "form" (ngSubmit)="onSubmit">
+<div formGroupName="pet" >
+  <input type="text" class="form-control" formControlName="petName" [(ngModel)]="newPet"> Введите имя питомца
+  <div formArrayName="photos">
+    <div >
+      <input type="text" *ngFor="let phone of getFormsControls()['controls']; let i = index"> Вставьте фото
+    </div>
+  </div>
+  <button (click)="addPhoto()"></button>
+  <select class="form-control" formControlName="petStatus">
+    <option value="available">Доступен</option>
+    <option value="unavailable">Недоступен</option>
+  </select>
 <button (click)="addPet()">Добавить питомца</button>
+
+</div>
+</form>
