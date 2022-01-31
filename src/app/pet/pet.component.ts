@@ -9,4 +9,5 @@ import { IPet } from '../interface/pet.interface';
 export class PetComponent {
   @Input('petInfo')
   public pet!: IPet;
+
 }

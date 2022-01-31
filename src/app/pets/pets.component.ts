@@ -11,14 +11,29 @@ import { PetService } from '../services/pet.service';
 })
 export class PetsComponent implements OnInit{
   public pets: IPet[] = [];
+
   constructor (public petService: PetService ) {}
 
   public ngOnInit() {
     this.petService
     .getPets()
-    .subscribe((data: IPet[])=> {
-      this.pets = data;
+    .subscribe((pets: IPet[])=> {
+      this.pets = pets;
+      this.pets.map((item) => {
+        if (item.status === "available") {
+          item.status = "Доступно"
+        }
+      });
+
     })
   }
+  public addPet(newPet: string) {
+    this.petService
+    .addPet(newPet)
+    .subscribe((pet: IPet)=> {
+      this.pets.push(pet);
+    });
+  }
+
 
 }

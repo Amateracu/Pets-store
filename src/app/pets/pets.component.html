@@ -1,8 +1,14 @@
-<app-pet
-  *ngFor="let pet of pets"
-  [petInfo]="pet"
+<app-add-pet
+  (add)="addPet($event)"
 >
-</app-pet>
+</app-add-pet>
+<div class="pets">
+  <app-pet
+    *ngFor="let pet of pets"
+    [petInfo]="pet"
+  >
+  </app-pet>
+</div>
 
 
 
